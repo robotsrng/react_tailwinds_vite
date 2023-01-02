@@ -1,0 +1,13 @@
+[
+  {
+    "label": "Dashboard",
+    "icon": "squares",
+    "url": "/dashboard"
+  },
+  {
+    "label": "Products",
+    "icon": "shopping-cart",
+    "url": "/products",
+    "notifications": 3
+  }
+]

@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@atoms": ["./src/atoms/index.ts"],
+      "@atoms/*": ["./src/atoms/*"],
+      "@molecules/*": ["./src/molecules/*"],
+      "@molecules": ["./src/molecules/index.ts"],
+      "@organisms/*": ["./src/organisms/*"],
+      "@organisms": ["./src/organisms/index.ts"],
+      "@templates/*": ["./src/templates/*"],
+      "@templates": ["./src/templates/index.ts"],
+      "@pages/*": ["./src/pages/*"],
+      "@pages": ["./src/pages/index.ts"],
+      "@hooks/*": ["./src/hooks/*"],
+      "@hooks": ["./src/hooks/index.ts"]
+    }
+  }
+}

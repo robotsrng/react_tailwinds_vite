@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  h1 {
+    @apply font-urbanist text-4xl;
+  }
+  h2 {
+    @apply font-urbanist text-3xl;
+  }
+  h3 {
+    @apply font-urbanist text-2xl;
+  }
+  h4 {
+    @apply font-urbanist text-xl;
+  }
+  h5 {
+    @apply font-urbanist text-lg;
+  }
+  h6 {
+    @apply font-urbanist text-base;
+  }
+  p {
+    @apply font-urbanist text-base;
+  }
+}
+
+@layer components {
+  .easing {
+    @apply transition-all duration-300 ease-in-out;
+  }
+
+  .btn {
+    @apply py-2 px-4 font-semibold rounded-lg shadow-md focus:outline-none focus:ring-2  focus:ring-opacity-75;
+  }
+  .btn-primary {
+    @apply bg-primary-500 text-white hover:bg-primary-600 focus:ring-primary-400 focus:ring-opacity-60 easing;
+  }
+  .btn-secondary {
+    @apply bg-secondary-500 text-white hover:bg-secondary-600 focus:ring-secondary-400 focus:ring-opacity-60;
+  }
+  .btn-tertiary {
+    @apply bg-white text-black ring-1 ring-black hover:bg-gray-100 focus:ring-black focus:ring-opacity-60;
+  }
+  .btn-success {
+    @apply bg-success-500 text-white hover:bg-success-600 focus:ring-success-400 focus:ring-opacity-60;
+  }
+  .btn-info {
+    @apply bg-info-500 text-white hover:bg-info-600 focus:ring-info-400 focus:ring-opacity-60;
+  }
+  .btn-warning {
+    @apply bg-warning-500 text-white hover:bg-warning-600 focus:ring-warning-400 focus:ring-opacity-60;
+  }
+  .btn-danger {
+    @apply bg-danger-500 text-white hover:bg-danger-600 focus:ring-danger-400 focus:ring-opacity-60;
+  }
+  .btn-text {
+    @apply bg-transparent hover:bg-transparent ring-0 shadow-none focus:ring-0;
+  }
+}

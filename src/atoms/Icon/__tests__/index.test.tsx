@@ -1,3 +1,4 @@
+import { kebabToPascalCase } from 'src/utils/string-utils';
 import { render, screen } from '../../../utils/test-utils';
 import Icon from '../Icon';
 
@@ -17,4 +18,23 @@ describe('<Icon />', () => {
     const icon = screen.queryByTestId('test');
     expect(icon).toBeNull();
   });
+
+  it('should apply the iconClassName prop to the icon component', () => {
+    render(<Icon name={'Puzzle'} iconClassName='test-class' data-testid='test' />);
+    const icon = screen.getByTestId('test');
+    const svgComponent = icon.querySelector('.test-class');
+    expect(svgComponent).toBeTruthy();
+  });
+
+  it('should render the correct icon component based on the name prop', () => {
+    render(<Icon name={'Puzzle'} data-testid='puzzle-icon' />);
+    expect(screen.getByTestId('puzzle-icon')).toBeTruthy();
+
+    render(<Icon name={'Check'} data-testid='check-icon' />);
+    expect(screen.getByTestId('check-icon')).toBeTruthy();
+
+    render(<Icon name={'CloseX'} data-testid='heart-icon' />);
+    expect(screen.getByTestId('heart-icon')).toBeTruthy();
+  });
+
 });

@@ -4,7 +4,6 @@ import { BaseButtonProps } from './types';
 const BaseButton: React.FC<BaseButtonProps> = ({ children, onClick, className, ...rest }) => {
 
   const handleButtonClick = (e: React.MouseEvent<HTMLButtonElement>) => {
-    e.preventDefault();
     onClick?.(e);
   };
   

@@ -1,4 +1,4 @@
-import * as Icons from './iconsList';
+import * as Icons from './iconsList' ;
 import { IconList, IconProps } from './types';
 import { kebabToPascalCase } from '../../utils/string-utils';
 

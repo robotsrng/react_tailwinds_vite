@@ -1,4 +1,4 @@
-import type { ColorVariants } from "../../utils/types/ui-types";
+import type { ColorVariants } from "../../utils/types/ui.types";
 
 export const getType = (type: ColorVariants): string => {
     switch (type) {

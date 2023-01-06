@@ -5,4 +5,5 @@ export interface IconButtonProps extends Partial<ButtonProps> {
   name: string;
   className?: string;
   iconProps?: IconProps;
+  onClick?: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
 }

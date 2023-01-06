@@ -78,9 +78,9 @@ const Button: React.FC<ButtonProps> = ({
           <Icon name={startIcon} className='mr-2' iconClassName=' text-current ' data-testid='button-start-icon' />
         )}
         {label}
+        {children}
         {endIcon && <Icon name={endIcon} className='ml-2' iconClassName='text-current' data-testid='button-end-icon' />}
       </span>
-      {children}
     </BaseButton>
   );
 };

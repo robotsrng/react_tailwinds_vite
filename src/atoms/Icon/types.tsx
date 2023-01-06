@@ -8,4 +8,5 @@ export interface IconProps {
   name?: string;
   className?: string;
   iconClassName?: string;
+  onClick?: (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
 }

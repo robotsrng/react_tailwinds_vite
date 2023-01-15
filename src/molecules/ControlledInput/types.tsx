@@ -8,4 +8,6 @@ export interface InputProps {
   className?: string;
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
   errors?: Record<string, any>;
+  // TODO FIX THE ANY
+  defaultValue?: any;
 }

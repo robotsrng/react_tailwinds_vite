@@ -1,4 +1,4 @@
-import {  StandardFormProps } from './types';
+import { StandardFormProps } from './types';
 import { FieldValues, FormProvider, useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { getValidationSchema } from 'src/utils/form-helpers/schema.helpers';
@@ -31,12 +31,16 @@ const StandardForm = <T extends FieldValues>({
     <FormProvider {...hookForm}>
       <form className={`flex flex-col space-y-4 ${className} `} onSubmit={handleSubmit(submitForm)} {...rest}>
         {config.map((input) => (
-          <ControlledInput key={input.name} config={input} />
+          <ControlledInput key={input.name} config={input} defaultValue={initialValues?.name} />
         ))}
         <Button type='submit'>Submit</Button>
         {errors?.map((error: Record<string, string>) => {
           return Object.entries(error).map(([key, value]) => {
-            return <p key={key}>{capitalize(key)}: {value}</p>;
+            return (
+              <p key={key}>
+                {capitalize(key)}: {value}
+              </p>
+            );
           });
         })}
       </form>

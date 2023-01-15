@@ -13,11 +13,12 @@ export const PROJECT_FORM_SCHEMA: TFormInputConfig[] = [
         name: 'content', type: 'richtext', label: 'Content', placeholder: 'Enter content', validation: yup.string().required('Content is required').min(3, 'Content must be at least 3 characters').max(500, 'Content must be less than 500 characters')
     },
     {
-        name: "imageUrl",
-        type: "text",
-        label: "Image URL",
-        placeholder: "Enter image URL",
-        validation: yup.string().required("Image URL is required").min(3, "Image URL must be at least 3 characters").max(500, "Image URL must be less than 500 characters"),
+        name: "image",
+        type: "image",
+        label: "Main Image",
+        placeholder: "Upload an image",
+        // validation: yup.mixed().required('File is required'),
+
     },
 
 ];

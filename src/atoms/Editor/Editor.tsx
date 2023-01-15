@@ -1,10 +1,9 @@
-import { useMemo } from 'react';
+import React, { useMemo } from 'react';
 import { EditorProps } from './types';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 
-const Editor: React.FC<EditorProps> = ({ children, className, onChange, ...rest }) => {
-  console.log("🚀 | file: Editor.tsx:7 | className", className);
+const Editor = React.forwardRef<ReactQuill, EditorProps>(({ children, className, onChange, ...rest }, ref) => {
   // TODO - Fix image upload so that the image is stored locally, then sent to the server on save, and the
   // urls are updated in the richtext
 
@@ -19,20 +18,15 @@ const Editor: React.FC<EditorProps> = ({ children, className, onChange, ...rest 
 
       // file type is only image.
       if (file && /^image\//.test(file.type)) {
-        console.log("🚀 | file: Editor.tsx:19 | imageHandler | file", file);
         // saveToServer(file);
       } else {
         console.warn('You could only upload images.');
       }
     };
   };
-  console.log("🚀 | file: Editor.tsx:7 | className", className);
-
   const handleChange = (value: string) => {
     onChange?.({ target: { value, name } });
   };
-  console.log("🚀 | file: Editor.tsx:7 | className", className);
-
   const modules = useMemo(
     () => ({
       toolbar: {
@@ -50,7 +44,7 @@ const Editor: React.FC<EditorProps> = ({ children, className, onChange, ...rest 
     }),
     []
   );
-  return <ReactQuill modules={modules} onChange={handleChange} {...rest} />;
-};
+  return <ReactQuill ref={ref} modules={modules} onChange={handleChange} {...rest} />;
+});
 
 export default Editor;

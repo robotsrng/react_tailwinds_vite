@@ -5,16 +5,17 @@ import Input from '@molecules/Input/Input';
 
 const ControlledInput: React.FC<InputProps> = ({ config, onChange, className, ...rest }) => {
   const formContext = useFormContext();
-  const {  formState, control } = formContext;
+  const { formState, control, setValue } = formContext;
 
   return (
     <Controller
       control={control}
       name={config.name}
-      render={({ field: { onChange: fieldOnChange, ...field } }) => {
-      const customOnChange = (e: ChangeEvent<HTMLInputElement>) => {
+      render={({ field: { onChange: fieldOnChange, ...field }, ...rest2 }) => {
+        const customOnChange = (e: ChangeEvent<HTMLInputElement>) => {
+          const isImage = config.type === 'image';
           onChange?.(e);
-          fieldOnChange(e);
+          fieldOnChange(isImage ? e.target.files : e);
         };
         return (
           <Input

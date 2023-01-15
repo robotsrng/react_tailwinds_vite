@@ -10,6 +10,7 @@
       "@organisms": ["./src/organisms/index.ts"],
       "@templates/*": ["./src/templates/*"],
       "@templates": ["./src/templates/index.ts"],
+      "@modelTypes": ["./src/models/types/index.ts"],
       "@pages/*": ["./src/pages/*"],
       "@pages": ["./src/pages/index.ts"],
       "@hooks/*": ["./src/hooks/*"],

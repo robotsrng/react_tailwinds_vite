@@ -1,10 +1,13 @@
-import TextField from "@atoms/TextField/TextField";
+import { TextField, PasswordInput } from "@molecules";
 import TextFieldArea from "@atoms/TextFieldArea/TextFieldArea";
 import { TFieldComponent } from "./types";
 import Editor from "@atoms/Editor/Editor";
+import ImageInput from "@molecules/ImageInput/ImageInput";
 
 export const fieldMapping: TFieldComponent = {
     "text": TextField,
     "textarea": TextFieldArea,
-    "richtext": Editor
+    "password": PasswordInput,
+    "richtext": Editor,
+    "image": ImageInput
 };

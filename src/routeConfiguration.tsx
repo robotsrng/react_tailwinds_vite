@@ -1,25 +1,40 @@
 import { createBrowserRouter } from 'react-router-dom';
-import App from './App';
 import LandingPage from './pages/LandingPage/LandingPage';
-import TestPage from '@pages/TestPage/TestPage';
 import ProjectsPage from '@pages/ProjectsPage/ProjectsPage';
+import AuthenticationPage from '@pages/AuthenticationPage/AuthenticationPage';
+import ProtectedRoute from '@templates/ProtectedRoute/ProtectedRoute';
+import Dashboard from './pages/Dashboard/Dashboard';
+import NotFoundPage from '@pages/NotFoundPage/NotFoundPage';
+import UsersPage from '@pages/User/UserPage';
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <LandingPage />,
+    errorElement: <NotFoundPage />,
   },
   {
     path: '/',
-    element: <App />,
+    element: <Dashboard />,
+    errorElement: <NotFoundPage />,
     children: [
       {
-        path: '/projects',
-        element: <ProjectsPage />,
+        path: '/',
+        element: <ProtectedRoute />,
+        children: [
+          {
+            path: 'projects',
+            element: <ProjectsPage />,
+          },
+        ],
       },
       {
-        path: '/test',
-        element: <TestPage />,
+        path: '/login',
+        element: <AuthenticationPage loginPage />,
+      },
+      {
+        path: '/signup',
+        element: <AuthenticationPage loginPage={false} />,
       },
     ],
   },

@@ -1,3 +1,3 @@
-export interface SidebarItemProps {
+export interface SidebarItemWrapperProps {
   children?: React.ReactNode;
 }

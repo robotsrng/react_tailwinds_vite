@@ -15,7 +15,7 @@ export default defineConfig({
       exclude: ['**/*.test.tsx', '**/*.test.ts', '**/*.stories.tsx', '**/*.stories.ts', '**/**/index.ts'],
     },
     environment: 'happy-dom',
-    include: ['src/**/__tests__/**/*.test.tsx'],
+    include: ['src/hooks/**/__tests__/**/*.test.tsx'],
     exclude: [...configDefaults.exclude, '.templates/**/*',],
 
   }

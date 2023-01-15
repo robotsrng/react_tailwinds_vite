@@ -1,6 +1,6 @@
-import { SidebarItemProps } from './types';
+import { SidebarItemWrapperProps } from './types';
 
-const SidebarItemWrapper: React.FC<SidebarItemProps> = ({ children, ...rest }) => {
+const SidebarItemWrapper: React.FC<SidebarItemWrapperProps> = ({ children, ...rest }) => {
   return (
     <li
       className='flex w-full justify-between text-gray-400 hover:text-gray-300 cursor-pointer items-center mb-6'
